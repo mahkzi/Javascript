@@ -1,26 +1,54 @@
-// let edad = parseFloat(prompt("Ingrese su edad:"));
-//  if (edad < 4){
-//     alert("No viviste ningun mundial")
-//  }else if (edad >= 4 && edad < 8){
-//     alert("Viviste un mundial")
-//  }else if (edad >=8  && edad < 12){
-//     alert("Viviste dos mundiales")
-//  }else if (edad >=12  && edad < 16){
-//     alert("Viviste tres mundiales")
-//  }else if (edad >=16  && edad < 20){
-//     alert("Viviste 4 mundiales")
-//  }else if (edad >=20  && edad < 24){
-//     alert("Viviste 5 mundiales")
-//  }else if (edad >=24  && edad < 28){
-//     alert("Viviste 6 mundiales")
-//  }else if (edad >=28  && edad < 32){
-//     alert("Viviste 7 mundiales")
-//  }else if (edad >=32  && edad < 36){
-//     alert("Viviste 8 mundiales")
-//  }else if (edad >=36  && edad < 40){
-//     alert("Viviste 9 mundiales")
-//  }else{
-//     alert("Viviste todos los mundiales")
-//  };
+// carrito simple y simulado
+//Primero deberíamos poder darle la opción al usuario de poder ver los productos, el carrito o salir.
+/*
+debería haberun alert para dar la bienvenida al usuario. Luego de darle la bienvenida, mostrarle los productos y la opción de ver el carrito.
+*/
+let condicion = true;
+let carrito = []
+const mostrarCarrito = function () {
+    if (carrito.length === 0) {
+        alert("Su carrito esta vacío")
+    } else {
+        console.log(carrito)
+    }
+}
+const agregarAlCarrito = function (producto) {
+    carrito.push(producto)
+}
+do {
+    alert("Bienvenido a nuestra página")
+    opciones = parseInt(prompt("Pulse 1 para ver los productos. Pulse 2 para ver su carrito. Pulse 0 para salir"))
+    switch (opciones) {
+        case 1:
+            alert("Lo que seleccione se verá en su carrito")
+            productos = parseInt(prompt("1 para los pantalones. 2 para las remeras. 3 para el buzo"))
+            if (productos === 1) {
+                alert("Usted a comprado un pantalón.");
+                agregarAlCarrito("pantalon");
+            } else if (producto === 2) {
+                alert("Usted a comprado una remera.");
+                agregarAlCarrito("remera");
+            } else if (producto === 3) {
+                alert("Usted a comprado un buzo.");
+                agregarAlCarrito("buzo");
+            } else {
+                alert("Por favor, seleccione una de las opciones disponibles.");
+            }
+            break;
+        case 2:
+            mostrarCarrito();
+            break;
+        case 0:
+            alert("Que tenga un buen día")
+            condicion = false
+            break;
+        default:
+            alert("Seleccione una opcion válida")
+            break;
+    }
+} while (condicion == true);
 
+// arrayA = [1, 2, 3, 4]
 
+// console.log(arrayA)
+// alert(arrayA)
